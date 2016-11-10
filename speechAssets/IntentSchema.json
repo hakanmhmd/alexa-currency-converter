@@ -1,0 +1,30 @@
+{
+    "intents": [
+        {
+            "intent": "GetExchangeRate",
+            "slots": [
+                {
+                    "name": "CURRENCY_FROM",
+                    "type": "CURRENCIES"
+                },
+                {
+                    "name": "CURRENCY_TO",
+                    "type": "CURRENCIES"
+                },
+                {
+                    "name":"AMOUNT",
+                    "type": "AMAZON.NUMBER"
+                }
+            ]
+        },
+        {
+          "intent": "AMAZON.HelpIntent"
+        },
+        {
+          "intent": "AMAZON.StopIntent"
+        },
+        {
+          "intent": "AMAZON.CancelIntent"
+        }
+    ]
+}
