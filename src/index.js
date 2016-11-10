@@ -11,35 +11,35 @@ var unirest = require('unirest')
  */
 var AlexaSkill = require('./AlexaSkill');
 
-var MyApp = function () {
+var CurrencyConverter = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-MyApp.prototype = Object.create(AlexaSkill.prototype);
-MyApp.prototype.constructor = MyApp;
+CurrencyConverter.prototype = Object.create(AlexaSkill.prototype);
+CurrencyConverter.prototype.constructor = CurrencyConverter;
 
-MyApp.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("MyApp onSessionStarted requestId: " + sessionStartedRequest.requestId
+CurrencyConverter.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+    console.log("CurrencyConverter onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-MyApp.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    console.log("MyApp onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+CurrencyConverter.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+    console.log("CurrencyConverter onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     response.ask("What currencies would you like me to look up?", "Say a currency, like 'USD Dollar', or say 'help' for additional instructions.");
 };
 
 /**
  * Overridden to show that a subclass can override this function to teardown session state.
  */
-MyApp.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("MyApp onSessionEnded requestId: " + sessionEndedRequest.requestId
+CurrencyConverter.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+    console.log("CurrencyConverter onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
-MyApp.prototype.intentHandlers = {
+CurrencyConverter.prototype.intentHandlers = {
     "GetExchangeRate": function (intent, session, response) {
         var currFrom = intent.slots.CURRENCY_FROM;
         var currTo = intent.slots.CURRENCY_TO;
@@ -62,7 +62,7 @@ MyApp.prototype.intentHandlers = {
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
-        response.ask("I can tell you the currency exchange between various currencies.");
+        response.ask("I can tell you the currency exchange between various currencies. What exchange rate do you want me to get for you?");
     },
 
     "AMAZON.StopIntent": function (intent, session, response) {
@@ -79,22 +79,10 @@ function handleRequest(currFrom, currTo, amount, response) {
         var speechOutput;
 
         if (err) {
-            if (err=='undefiend'){
-                speechOutput += "Sorry, the currency converter service can not process your request, please try again.";
-            }
-            else {
-                speechOutput += "Sorry, the currency converter service is experiencing a problem with your request. Please say just a number.";
-            }
-            
+            response.tell('Sorry, the currency converter service is experiencing a problem with your request. Please provide real currencies.');
         } else {
-            
-            var result = body;
-            
-            speechOutput = 'There you go: ' + amount + ' ' + currFrom + ' equals to ' + result + ' ' + currTo;
-            
+            response.tell('There you go: ' + amount + ' ' + currFrom + ' equals to ' + body + ' ' + currTo);   
         }
-
-        response.tell(speechOutput);
     });
 }
 
@@ -107,7 +95,7 @@ function getCurrencyExchange(currFrom, currTo, amount, callback){
     .end(function (result) {
         console.log(result.body)
         console.log(typeof result.body)
-        if(result.body === '0'){
+        if(result.body === '0' || result.body === 'Result not available'){
             callback(new Error('Error has occured'));
         } else {
             callback(null, result.body);
@@ -117,8 +105,8 @@ function getCurrencyExchange(currFrom, currTo, amount, callback){
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
-    // Create an instance of the MyApp skill.
-    var skill = new MyApp();
+    // Create an instance of the CurrencyConverter skill.
+    var skill = new CurrencyConverter();
     skill.execute(event, context);
 };
 
