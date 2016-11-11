@@ -5,6 +5,7 @@ var BASE_URL = "https://currency-exchange.p.mashape.com";
 
 var https = require('https');
 var unirest = require('unirest')
+var symbols = require('./currencies.js')
 
 /**
  * The AlexaSkill prototype and helper functions
@@ -57,7 +58,17 @@ CurrencyConverter.prototype.intentHandlers = {
                 response.ask("I didn't quite hear that. What currency to do you want me to convert?");
             }
         }else{
-            handleRequest(currFrom.value, currTo.value, amount, response);
+            // if currency was given by its full name, not the symbol
+            var from = currFrom.value
+            var to = currTo.value
+            if(symbols.currencies[currFrom.value]){
+                from = symbols.currencies[currFrom.value]
+            }
+            if(symbols.currencies[currTo.value]){
+                to = symbols.currencies[currTo.value]
+            }
+            // send the data to API endpoint
+            handleRequest(from, to, amount, response);
         }
     },
 
@@ -76,8 +87,6 @@ CurrencyConverter.prototype.intentHandlers = {
 
 function handleRequest(currFrom, currTo, amount, response) {
     getCurrencyExchange(currFrom, currTo, amount, function(err, body){
-        var speechOutput;
-
         if (err) {
             response.tell('Sorry, the currency converter service is experiencing a problem with your request. Please provide real currencies.');
         } else {
@@ -87,7 +96,6 @@ function handleRequest(currFrom, currTo, amount, response) {
 }
 
 function getCurrencyExchange(currFrom, currTo, amount, callback){
-
     var url = BASE_URL + '/exchange?from= + ' + currFrom + '&q=' + amount + '&to=' + currTo;
     unirest.get(url)
     .header("X-Mashape-Key", "NqqBVS33W2mshhldQgiS8ZOCG4F2p1ymJ2xjsnwcqtIjHZw32r")
