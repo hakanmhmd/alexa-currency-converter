@@ -5,6 +5,7 @@ var BASE_URL = "https://currency-exchange.p.mashape.com";
 
 var https = require('https');
 var unirest = require('unirest')
+var lowerCase = require('lower-case')
 var symbols = require('./currencies.js')
 
 /**
@@ -61,11 +62,11 @@ CurrencyConverter.prototype.intentHandlers = {
             // if currency was given by its full name, not the symbol
             var from = currFrom.value
             var to = currTo.value
-            if(symbols.currencies[currFrom.value]){
-                from = symbols.currencies[currFrom.value]
+            if(symbols.currencies[lowerCase(currFrom.value)]){
+                from = symbols.currencies[lowerCase(currFrom.value)]
             }
-            if(symbols.currencies[currTo.value]){
-                to = symbols.currencies[currTo.value]
+            if(symbols.currencies[lowerCase(currTo.value)]){
+                to = symbols.currencies[lowerCase(currTo.value)]
             }
             // send the data to API endpoint
             handleRequest(from, to, amount, response);
