@@ -1,170 +1,402 @@
-AED
-AFN
-ALL
-AMD
-ANG
-AOA
-ARS
-AUD
-AWG
-AZN
-BAM
-BBD
-BDT
-BGN
-BHD
-BIF
-BMD
-BND
-BOB
-BRL
-BSD
-BTC
-BTN
-BWP
-BYN
-BZD
-CAD
-CDF
-CHF
-CLF
-CLP
-CNY
-COP
-CRC
-CUC
-CUP
-CVE
-CZK
-DJF
-DKK
-DOP
-DZD
-EEK
-EGP
-ERN
-ETB
-EUR
-FJD
-FKP
-GBP
-GEL
-GGP
-GHS
-GIP
-GMD
-GNF
-GTQ
-GYD
-HKD
-HNL
-HRK
-HTG
-HUF
-IDR
-ILS
-IMP
-INR
-IQD
-IRR
-ISK
-JEP
-JMD
-JOD
-JPY
-KES
-KGS
-KHR
-KMF
-KPW
-KRW
-KWD
-KYD
-KZT
-LAK
-LBP
-LKR
-LRD
-LSL
-LTL
-LVL
-LYD
-MAD
-MDL
-MGA
-MKD
-MMK
-MNT
-MOP
-MRO
-MTL
-MUR
-MVR
-MWK
-MXN
-MYR
-MZN
-NAD
-NGN
-NIO
-NOK
-NPR
-NZD
-OMR
-PAB
-PEN
-PGK
-PHP
-PKR
-PLN
-PYG
-QAR
-RON
-RSD
-RUB
-RWF
-SAR
-SBD
-SCR
-SDG
-SEK
-SGD
-SHP
-SLL
-SOS
-SRD
-STD
-SVC
-SYP
-SZL
-THB
-TJS
-TMT
-TND
-TOP
-TRY
-TTD
-TWD
-TZS
-UAH
-UGX
-USD
-UYU
-UZS
-VEF
-VND
-VUV
-WST
-XAF
-XAG
-XAU
-XCD
-XDR
-XOF
-XPD
-XPF
-XPT
-YER
-ZAR
-ZMW
-ZWL
+aed
+afn
+all
+amd
+ang
+aoa
+ars
+aud
+awg
+azn
+bam
+bbd
+bdt
+bgn
+bhd
+bif
+bmd
+bnd
+bob
+brl
+bsd
+btc
+btn
+bwp
+byn
+bzd
+cad
+cdf
+chf
+clf
+clp
+cny
+cop
+crc
+cuc
+cup
+cve
+czk
+djf
+dkk
+dop
+dzd
+eek
+egp
+ern
+etb
+eur
+fjd
+fkp
+gbp
+gel
+ggp
+ghs
+gip
+gmd
+gnf
+gtq
+gyd
+hkd
+hnl
+hrk
+htg
+huf
+idr
+ils
+imp
+inr
+iqd
+irr
+isk
+jep
+jmd
+jod
+jpy
+kes
+kgs
+khr
+kmf
+kpw
+krw
+kwd
+kyd
+kzt
+lak
+lbp
+lkr
+lrd
+lsl
+ltl
+lvl
+lyd
+mad
+mdl
+mga
+mkd
+mmk
+mnt
+mop
+mro
+mtl
+mur
+mvr
+mwk
+mxn
+myr
+mzn
+nad
+ngn
+nio
+nok
+npr
+nzd
+omr
+pab
+pen
+pgk
+php
+pkr
+pln
+pyg
+qar
+ron
+rsd
+rub
+rwf
+sar
+sbd
+scr
+sdg
+sek
+sgd
+shp
+sll
+sos
+srd
+std
+svc
+syp
+szl
+thb
+tjs
+tmt
+tnd
+top
+try
+ttd
+twd
+tzs
+uah
+ugx
+usd
+uyu
+uzs
+vef
+vnd
+vuv
+wst
+xaf
+xag
+xau
+xcd
+xdr
+xof
+xpd
+xpf
+xpt
+yer
+zar
+zmw
+zwl
+united arab emirates dirham
+arab dirham
+emirates dirham
+arab emirates dirham
+afghan afghani
+afghani
+afghanistan afghani
+albanian lek
+albania lek
+albani lek
+lek
+armenian dram
+armenia dram
+dram
+netherlands antillean guilder
+guilder
+netherlands guilder
+angolan kwanza
+angola kwanza
+kwanza
+argentine peso
+australian dollar
+aruban florin
+florin
+azerbaijani manat
+azerbaijani new manat
+bosnia-herzegovina convertible mark
+bosnia and herzegovina convertible mark
+bosnia-herzegovina convertible marka
+bosnia and herzegovina convertible marka
+barbadian dollar
+bangladeshi taka
+bangladesh taka
+taka
+bulgarian lev
+lev
+bahraini dinar
+bahrain dinar
+burundian franc
+burundi franc
+bermudan dollar
+brunei dollar
+bolivian boliviano
+brazilian real
+real
+bahamian dollar
+bitcoin
+bhutanese ngultrum
+botswanan pula
+belarusian ruble
+belize dollar
+canadian dollar
+congolese franc
+swiss franc
+chilean unit of account
+chilean peso
+chinese yuan
+yuan
+colombian peso
+costa rican colon
+cuban convertible peso
+cuban peso
+cape verdean escudo
+czech republic koruna
+koruna
+czech koruna
+djiboutian franc
+danish krone
+dominican peso
+algerian dinar
+estonian kroon
+egyptian pound
+eritrean nakfa
+ethiopian birr
+euro
+fijian dollar
+falkland islands pound
+british pound sterling
+pound sterling
+sterling
+pound
+georgian lari
+guernsey pound
+ghanaian cedi
+gibraltar pound
+gambian dalasi
+guinean franc
+guatemalan quetzal
+guyanaese dollar
+hong kong dollar
+honduran lempira
+croatian kuna
+haitian gourde
+hungarian forint
+indonesian rupiah
+israeli new sheqel
+manx pound
+indian rupee
+iraqi dinar
+iranian rial
+icelandic krona
+jersey pound
+jamaican dollar
+jordanian dinar
+japanese yen
+yen
+kenyan shilling
+kyrgystani som
+cambodian riel
+comorian franc
+north korean won
+south korean won
+kuwaiti dinar
+cayman islands dollar
+kazakhstani tenge
+laotian kip
+lebanese pound
+sri lankan rupee
+liberian dollar
+lesotho loti
+lithuanian litas
+latvian lats
+libyan dinar
+moroccan dirham
+moldovan leu
+malagasy ariary
+macedonian denar
+myanma kyat
+mongolian tugrik
+macanese pataca
+mauritanian ouguiya
+maltese lira
+mauritian rupee
+maldivian rufiyaa
+malawian kwacha
+mexican peso
+malaysian ringgit
+mozambican metical
+namibian dollar
+nigerian naira
+nicaraguan cordoba
+norwegian krone
+nepalese rupee
+new zealand dollar
+omani rial
+panamanian balboa
+peruvian nuevo sol
+papua new guinean kina
+philippine peso
+pakistani rupee
+polish zloty
+paraguayan guarani
+qatari rial
+romanian leu
+serbian dinar
+russian ruble
+rwandan franc
+saudi riyal
+solomon islands dollar
+seychellois rupee
+sudanese pound
+swedish krona
+singapore dollar
+saint helena pound
+sierra leonean leone
+somali shilling
+surinamese dollar
+sao tome and principe dobra
+salvadoran colon
+syrian pound
+swazi lilangeni
+thai baht
+thailand baht
+tajikistani somoni
+turkmenistani manat
+turkmenistan manat
+tunisian dinar
+tunisia dinar
+tongan paanga
+tonga paanga
+paanga
+turkish lira
+turk lira
+trinidad and tobago dollar
+new taiwan dollar
+tanzanian shilling
+tanzania shilling
+ukrainian hryvnia
+ukrainia hryvnia
+hryvnia
+ugandan shilling
+uganda shilling
+united states dollar
+american dollar
+us dollar
+dollar
+uruguayan peso
+uruguay peso
+uzbekistan som
+venezuelan bolivar fuerte
+venezuelan fuerte
+venezuela fuerte
+fuerte
+vietnamese dong
+dong
+vietnam dong
+vanuatu vatu
+vatu
+samoan tala
+tala
+cfa franc beac
+silver ounce
+silver
+gold ounce
+gold
+east caribbean dollar
+cfa franc bceao
+palladium ounce
+cfp franc
+platinum ounce
+platinum
+yemeni rial
+yemen rial
+south african rand
+african rand
+south africa rand
+africa rand
+rand
+zambian kwacha
+zambia kwacha
+zimbabwean dollar
+zimbabwe dollar

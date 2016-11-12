@@ -1,5 +1,6 @@
 GetExchangeRate how much {CURRENCY_TO} is {AMOUNT} {CURRENCY_FROM}
 GetExchangeRate the exchange rate from {CURRENCY_FROM} to {CURRENCY_TO}
+GetExchangeRate get me the exchange rate {CURRENCY_FROM} {CURRENCY_TO}
 GetExchangeRate how much {CURRENCY_TO} is a {CURRENCY_FROM}
 GetExchangeRate show me the exchange rate from {CURRENCY_FROM} to {CURRENCY_TO}
 GetExchangeRate get me the exchange rate {CURRENCY_FROM} to {CURRENCY_TO}
