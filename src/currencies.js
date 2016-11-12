@@ -5,7 +5,7 @@ var currencies = {
   "arab emirates dirham":"aed",
   "afghan afghani": "afn",
   "afghani":"afn",
-  "afghanistan afghani","afn",
+  "afghanistan afghani":"afn",
   "albanian lek": "all",
   "albania lek": "all",
   "albani lek": "all",
