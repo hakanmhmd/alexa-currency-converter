@@ -3,7 +3,7 @@
 
 Skill set for Alexa to convert between currencies.
 
-So far the model only accepts certain representations for each currency. For more information, check the file currency.js in the repository.
+So far the model only accepts certain representations for each currency. For more information, check the file [currency.js](/src/currencies.js) in the repository.
 
 If you want to replicate the project:
 
