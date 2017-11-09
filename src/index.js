@@ -1,12 +1,13 @@
 var APP_ID = "amzn1.ask.skill.51de6423-881f-4698-a3c3-92ce34665d26";
 var APP_NAME = "Currency exchange";
 
-var BASE_URL = "https://currency-exchange.p.mashape.com";
+var BASE_URL = "https://api.fixer.io/latest?symbols=";
 
 var https = require('https');
-var unirest = require('unirest')
-var lowerCase = require('lower-case')
-var symbols = require('./currencies.js')
+var unirest = require('unirest');
+var lowerCase = require('lower-case');
+var upperCase = require('upper-case');
+var symbols = require('./currencies.js');
 
 /**
  * The AlexaSkill prototype and helper functions
@@ -63,10 +64,10 @@ CurrencyConverter.prototype.intentHandlers = {
             var from = currFrom.value
             var to = currTo.value
             if(symbols.currencies[lowerCase(currFrom.value)]){
-                from = symbols.currencies[lowerCase(currFrom.value)]
+                from = upperCase(symbols.currencies[lowerCase(currFrom.value)])
             }
             if(symbols.currencies[lowerCase(currTo.value)]){
-                to = symbols.currencies[lowerCase(currTo.value)]
+                to = upperCase(symbols.currencies[lowerCase(currTo.value)])
             }
             // send the data to API endpoint
             handleRequest(from, to, amount, response);
@@ -87,27 +88,32 @@ CurrencyConverter.prototype.intentHandlers = {
 };
 
 function handleRequest(currFrom, currTo, amount, response) {
-    getCurrencyExchange(currFrom, currTo, amount, function(err, body){
+    getCurrencyExchange(currFrom, currTo, amount, function(err, result){
         if (err) {
             response.tell('Sorry, the currency converter service is experiencing a problem with your request. Please provide real currencies.');
         } else {
-            response.tell('There you go: ' + amount + ' ' + currFrom + ' equals to ' + body + ' ' + currTo);   
+            response.tell('There you go: ' + amount + ' ' + currFrom + ' equals to ' + result + ' ' + currTo);   
         }
     });
 }
 
 function getCurrencyExchange(currFrom, currTo, amount, callback){
-    var url = BASE_URL + '/exchange?from= + ' + currFrom + '&q=' + amount + '&to=' + currTo;
+    var url = BASE_URL + currFrom + ',' + currTo;
+    console.log(url);
     unirest.get(url)
-    .header("X-Mashape-Key", "NqqBVS33W2mshhldQgiS8ZOCG4F2p1ymJ2xjsnwcqtIjHZw32r")
     .header("Accept", "text/plain")
     .end(function (result) {
-        console.log(result.body)
-        console.log(typeof result.body)
-        if(result.body === '0' || result.body === 'Result not available'){
+        var body = result.raw_body
+        json = JSON.parse(body)
+      
+        console.log(json)
+
+        if(Object.keys(json.rates).length != 2){
             callback(new Error('Error has occured'));
         } else {
-            callback(null, result.body);
+            
+            answer = Number(json.rates[currTo]) * amount;
+            callback(null, answer.toFixed(3));
         }
     });
 }

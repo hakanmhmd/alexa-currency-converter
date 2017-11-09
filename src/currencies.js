@@ -77,6 +77,7 @@ var currencies = {
   "fijian dollar":"fjd",
   "falkland islands pound":"fkp",
   "british pound sterling":"gbp",
+  "british pound":"gbp",
   "pound sterling":"gbp",
   "sterling":"gbp",
   "pound":"gbp",
